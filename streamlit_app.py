@@ -115,7 +115,7 @@ with st.sidebar:
     previous_mode = st.session_state.get('current_mode', None)
     
     modo = st.radio("🗣️ Estilo de explicación", 
-                   ["Basico", "Ejemplos con analogías", "Ejemplos técnicos"])
+                   ["Modo principiante", "Con analogías", "Ejemplos técnicos"])
     
     # Detectar cambio de modo
     if 'current_mode' not in st.session_state or st.session_state.current_mode != modo:
@@ -123,34 +123,33 @@ with st.sidebar:
         st.session_state.mode_changed = True
     
     modo_prompt = {
-            "Modo principiante": """
-            * Explica TODO de una manera facil de entender para alguien sin conocimiento del tema
-            * Usa palabras simples y evita términos técnicos
-            * Divide conceptos complejos en partes pequeñas
-            * Nunca asumas conocimiento previo
-            * Usa ejemplos de la vida cotidiana
-            * Limita tus respuestas, que no sean muy largas
-            """,
-            "Con analogías": """
-            * Para cada concepto técnico, ofrece una analogía clara
-            * Compara con situaciones comunes (cocina, deportes, viajes)
-            * Estructura tus respuestas: Concepto → Analogía → Explicación
-            * Usa metáforas visuales cuando sea posible
-            * Incluye al menos una analogía por respuesta
-            """,
-            "Ejemplos técnicos": """
-            * Proporciona ejemplos prácticos con código cuando sea relevante
-            * Explica primero el concepto en 1-2 frases simples
-            * Muestra implementaciones concretas
-            * Usa formatos: Explicación → Ejemplo → Aplicación práctica
-            * Incluye código caundo sea necesario
-            """
-        }[modo]
+        "Modo principiante": """
+        * Explica TODO de una manera facil de entender para alguien sin conocimiento del tema
+        * Usa palabras simples y evita términos técnicos
+        * Divide conceptos complejos en partes pequeñas
+        * Nunca asumas conocimiento previo
+        * Usa ejemplos de la vida cotidiana
+        * Limita tus respuestas, que no sean muy largas
+        """,
+        "Con analogías": """
+        * Para cada concepto técnico, ofrece una analogía clara
+        * Compara con situaciones comunes (cocina, deportes, viajes)
+        * Estructura tus respuestas: Concepto → Analogía → Explicación
+        * Usa metáforas visuales cuando sea posible
+        * Incluye al menos una analogía por respuesta
+        """,
+        "Ejemplos técnicos": """
+        * Proporciona ejemplos prácticos con código cuando sea relevante
+        * Explica primero el concepto en 1-2 frases simples
+        * Muestra implementaciones concretas
+        * Usa formatos: Explicación → Ejemplo → Aplicación práctica
+        * Incluye código caundo sea necesario
+        """
+    }[modo]
     
     st.markdown("---")
     st.markdown("**Sobre ExpliBot**")
     st.markdown("Asistente para explicar temas técnicos de forma sencilla")
-
 # === INTERFAZ PRINCIPAL ===
 st.title("🤖 ExpliBot - Asistente Técnico")
 st.caption("Pregúntame sobre IA, programación o ciencia de datos y te lo explicaré de forma clara")
