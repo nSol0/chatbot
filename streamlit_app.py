@@ -115,7 +115,7 @@ with st.sidebar:
     previous_mode = st.session_state.get('current_mode', None)
     
     modo = st.radio("🗣️ Estilo de explicación", 
-                   ["Basico", "Ejemplos con analogias", "Ejemplos técnicos"])
+                   ["Basico", "Ejemplos", "Ejemplos técnicos"])
     
     # Detectar cambio de modo
     if 'current_mode' not in st.session_state or st.session_state.current_mode != modo:
@@ -123,7 +123,7 @@ with st.sidebar:
         st.session_state.mode_changed = True
     
     modo_prompt = {
-        "Modo principiante": """
+        "Basico": """
         * Explica TODO de una manera facil de entender para alguien sin conocimiento del tema
         * Usa palabras simples y evita términos técnicos
         * Divide conceptos complejos en partes pequeñas
@@ -131,7 +131,7 @@ with st.sidebar:
         * Usa ejemplos de la vida cotidiana
         * Limita tus respuestas, que no sean muy largas
         """,
-        "Con analogías": """
+        "Ejemplos": """
         * Para cada concepto técnico, ofrece una analogía clara
         * Compara con situaciones comunes (cocina, deportes, viajes)
         * Estructura tus respuestas: Concepto → Analogía → Explicación
@@ -150,9 +150,6 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("**Sobre ExpliBot**")
     st.markdown("Asistente para explicar temas técnicos de forma sencilla")
-# === INTERFAZ PRINCIPAL ===
-st.title("🤖 ExpliBot - Asistente Técnico")
-st.caption("Pregúntame sobre IA, programación o ciencia de datos y te lo explicaré de forma clara")
 
 # === LÓGICA DEL CHAT ===
 if 'chat_history' not in st.session_state or st.session_state.get('model_changed', False) or st.session_state.get('mode_changed', False):
