@@ -115,15 +115,15 @@ with st.sidebar:
     previous_mode = st.session_state.get('current_mode', None)
     
     modo = st.radio("🗣️ Estilo de explicación", 
-                   ["Modo principiante", "Con analogías", "Ejemplos técnicos"])
+                   ["Basico", "Ejemplos con analogías", "Ejemplos técnicos"])
     
     # Detectar cambio de modo
     if 'current_mode' not in st.session_state or st.session_state.current_mode != modo:
         st.session_state.current_mode = modo
         st.session_state.mode_changed = True
     
-    modo_prompt = {
-        "Basica": """
+       modo_prompt = {
+        "Modo principiante": """
         * Explica TODO de una manera facil de entender para alguien sin conocimiento del tema
         * Usa palabras simples y evita términos técnicos
         * Divide conceptos complejos en partes pequeñas
@@ -131,7 +131,7 @@ with st.sidebar:
         * Usa ejemplos de la vida cotidiana
         * Limita tus respuestas, que no sean muy largas
         """,
-        "Ejemplos con analogías": """
+        "Con analogías": """
         * Para cada concepto técnico, ofrece una analogía clara
         * Compara con situaciones comunes (cocina, deportes, viajes)
         * Estructura tus respuestas: Concepto → Analogía → Explicación
