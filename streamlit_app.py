@@ -19,7 +19,7 @@ HEADERS = {
 model_options = {
     "Qwen3": "qwen/qwen3-235b-a22b-07-25:free",
     "DeepSeek R1": "deepseek/deepseek-r1-0528:free",
-    "Qwen32B": "qwen/qwq-32b:free",
+    "Gemini 2.0": "google/gemini-2.0-flash-exp:free",
 }
 
 # === ESTILOS CSS PERSONALIZADOS ===
@@ -160,7 +160,9 @@ if 'chat_history' not in st.session_state or st.session_state.get('model_changed
     # Reiniciar el chat cuando cambia el modelo o el modo
     st.session_state.chat_history = [{
         "role": "system",
-        "content": f"""Eres ExpliBot, un asistente especializado en explicar temas técnicos complejos. 
+        "content": f"""Eres ExpliBot, un asistente especializado en explicar temas técnicos complejos 
+        (programación, inteligencia artificial, ciencia de datos, etc.) de manera 
+        extremadamente sencilla y accesible para personas sin conocimientos previos.
         Actualmente usando el modelo {MODEL.split('/')[-1]} en modo {modo.lower()}.
         
         Sigue ESTAS reglas esenciales:
