@@ -17,8 +17,8 @@ HEADERS = {
 
 # === MODELOS DISPONIBLES ===
 model_options = {
-    "Qwen3": "qwen/qwen3-235b-a22b-07-25:free",
     "DeepSeek R1": "deepseek/deepseek-r1-0528:free",
+    "Qwen3": "qwen/qwen3-235b-a22b-07-25:free",
     "Gemini 2.0": "google/gemini-2.0-flash-exp:free",
 }
 
