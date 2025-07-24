@@ -115,7 +115,7 @@ with st.sidebar:
     previous_mode = st.session_state.get('current_mode', None)
     
     modo = st.radio("🗣️ Estilo de explicación", 
-                   ["Modo principiante", "Con analogías", "Ejemplos técnicos"])
+                   ["Basico", "Ejemplos con analogias", "Ejemplos técnicos"])
     
     # Detectar cambio de modo
     if 'current_mode' not in st.session_state or st.session_state.current_mode != modo:
