@@ -151,6 +151,10 @@ with st.sidebar:
     st.markdown("**Sobre ExpliBot**")
     st.markdown("Asistente para explicar temas técnicos de forma sencilla")
 
+# === INTERFAZ PRINCIPAL ===
+st.title("🤖 ExpliBot - Asistente Técnico")
+st.caption("Pregúntame sobre IA, programación o ciencia de datos y te lo explicaré de forma clara")
+
 # === LÓGICA DEL CHAT ===
 if 'chat_history' not in st.session_state or st.session_state.get('model_changed', False) or st.session_state.get('mode_changed', False):
     # Reiniciar el chat cuando cambia el modelo o el modo
