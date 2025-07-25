@@ -115,7 +115,7 @@ with st.sidebar:
     previous_mode = st.session_state.get('current_mode', None)
     
     modo = st.radio("🗣️ Estilo de explicación", 
-                   ["Basico", "Ejemplos", "Ejemplos técnicos"])
+                   ["Basico", "Ejemplos (Analogías)", "Ejemplos técnicos"])
     
     # Detectar cambio de modo
     if 'current_mode' not in st.session_state or st.session_state.current_mode != modo:
@@ -131,7 +131,7 @@ with st.sidebar:
         * Usa ejemplos de la vida cotidiana
         * Limita tus respuestas, que no sean muy largas
         """,
-        "Ejemplos": """
+        "Ejemplos (Analogías)": """
         * Para cada concepto técnico, ofrece una analogía clara
         * Compara con situaciones comunes (cocina, deportes, viajes)
         * Estructura tus respuestas: Concepto → Analogía → Explicación
